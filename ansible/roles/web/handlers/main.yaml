@@ -1,0 +1,11 @@
+---
+
+- name: Restart nginx
+  service: 
+    name: nginx 
+    state: restarted
+
+- name: Restart auditd
+  service: 
+    name: auditd
+    state: restarted
