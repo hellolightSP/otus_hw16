@@ -10,7 +10,6 @@
       - epel-release
     state: latest
 
-
 - name: Install packages
   package:
     name:
@@ -29,8 +28,8 @@
   lineinfile:
     path: /etc/audit/rules.d/audit.rules
     line: -w /etc/nginx/nginx.conf -p wa -k nginx_conf
-  notify: Restart auditd
-
+    mode: '0640'
+  
 - name: adding rule two to nginx
   lineinfile:
     path: /etc/audit/rules.d/audit.rules
